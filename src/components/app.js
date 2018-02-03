@@ -15,14 +15,15 @@ angular.module('video-player')
       };
       this.makeSearch = (query) => {
         youTube
-          .getVideos(query)
+          .search(query)
           .then((response) => {
             console.log(response);
             this.searchResults(response.data.items);
           });
           
-       
       };
+      
+      // this.makeSearch('cat');
     },
     templateUrl: "src/templates/app.html"
   });
