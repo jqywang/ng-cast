@@ -5,22 +5,23 @@ angular.module('video-player')
     controller: function(youTube) {
       this.videos = exampleVideoData;
       this.currentVideo = exampleVideoData[0];
-      this.searchValue = 'type here';
       this.selectVideo = (video) => {
         this.currentVideo = video;
-        // this.selected = exampleVideoData[index];
+        //this.selected = exampleVideoData[index];
       };
       this.searchResults = (videos) => {
         this.videos = videos;
+        this.currentVideo = videos[0];
       };
-      this.makeSearch = () => {
+      this.makeSearch = (query) => {
         youTube
-          .getVideos(this.searchValue)
+          .getVideos(query)
           .then((response) => {
             console.log(response);
-          //this.searchResults(response.items);
-          })
-          .catch(console.log('bad request'));
+            this.searchResults(response.data.items);
+          });
+          
+       
       };
     },
     templateUrl: "src/templates/app.html"

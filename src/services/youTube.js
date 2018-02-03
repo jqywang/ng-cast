@@ -3,8 +3,8 @@ angular.module('video-player')
     // TODO
     this.getVideos = (query) => {
       return $http.get('https://www.googleapis.com/youtube/v3/search', {
-        key: 'AIzaSyCil7lpVb-38lesrJb0Xt3H1B2YnTBBYhY',
         params: {
+          key: 'AIzaSyCil7lpVb-38lesrJb0Xt3H1B2YnTBBYhY',
           q: query,
           part: 'snippet',
           maxResults: 5,

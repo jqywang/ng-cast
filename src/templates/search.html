@@ -1,6 +1,6 @@
 <div class="search-bar form-inline">
   <input ng-model="$ctrl.searchValue" class="form-control" type="text" />
-  <button class="btn" ng-click="$ctrl.makeSearch(youTube)">
+  <button class="btn" ng-click="$ctrl.makeSearch($ctrl.searchValue)">
     <span class="glyphicon glyphicon-search"></span>
   </button>
 </div>
